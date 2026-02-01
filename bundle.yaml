@@ -1,14 +1,12 @@
 # TypeScript/JavaScript LSP Bundle
 # Provides TypeScript and JavaScript language support for code intelligence via LSP.
-# Includes the core LSP bundle and adds TypeScript/JavaScript-specific configuration.
+# The typescript-lsp behavior includes lsp-core which provides the tool-lsp module.
 
 bundle:
   name: lsp-typescript
   version: 0.1.0
   description: TypeScript/JavaScript LSP support via typescript-language-server
 
-# Include core LSP bundle - this gives us the tool-lsp module
-# Our typescript/javascript config will deep merge with the core's empty languages: {}
+# Include only the typescript-lsp behavior - it already includes lsp-core internally
 includes:
-  - bundle: git+https://github.com/microsoft/amplifier-bundle-lsp@main
   - bundle: lsp-typescript:behaviors/typescript-lsp
